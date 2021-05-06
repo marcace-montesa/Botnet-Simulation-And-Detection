@@ -1,0 +1,13 @@
+
+#ICMP flood
+alert icmp any any -> 192.168.56.104 any (msg:"ICMP flood";sid:1;)
+#XMAS scan
+alert tcp any any -> 192.168.56.104 any (msg:"XMAS scan"; flags:FPU; sid:2;)
+#FIN scan
+alert tcp any any -> 192.168.56.104 any (msg:"FIN Scan"; flags:F; sid:3;)
+#NULL scan
+alert tcp any any -> 192.168.56.104 any (msg:"NULL Scan"; flags:0; sid:4;)
+#ACK scan
+alert tcp any any -> 192.168.56.104 any (flags:A; ack:0; msg:"ACK Scan"; sid:5;)
+#syn scan
+alert tcp any any -> 192.168.56.104 any (msg:"SYN scan"; flags:S; sid:6;)
